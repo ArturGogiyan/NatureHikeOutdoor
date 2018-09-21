@@ -1,0 +1,331 @@
+
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org"
+       lang="en">
+
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link th:href="@{/css/loginPageStyle.css}" rel="stylesheet" type="text/css" />
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" th:src="@{/js/loginPageScript.js}"></script>
+</head>
+
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="panel panel-login">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <a href="#" class="active" id="login-form-link">Item</a>
+                        </div>
+                        <div class="col-xs-6">
+                            <a href="#" id="register-form-link">Category</a>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <form id="login-form" th:action="@{/admin/addItem}" th:object="${item}" method="post" role="form" style="display: block;" enctype="multipart/form-data">
+                                <div class="form-group">
+                                    <label>Category :</label>
+                                    <select name="select" th:field="*{categoryName}">
+                                        <option value=""> -- </option>
+                                        <!--<option th:text="${category}"></option>-->
+                                        <option th:each="category : ${names}"
+                                                th:value="${category.getId()}"
+                                                th:utext="${category.getName()}"/>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Название :</label>
+                                    <input type="text" name="" id="username-5" th:field="*{name}" tabindex="1" class="form-control" placeholder="name" value="">
+                                </div>
+
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <div class="form-group">
+                                                <label>Цвет :</label>
+                                                <input type="text" name="" id="color-1" th:field="*{colorNames}" tabindex="1" class="form-control" placeholder="color" value="">
+                                            </div>
+                                            </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <label>Количество:</label>
+                                                <input type="text" name="" id="quantity-1" th:field="*{colorQuantities}" tabindex="1" class="form-control" placeholder="quantity" value="">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="form-group">
+                                                <label>Цвет :</label>
+                                                <input type="text" name="" id="color-2" th:field="*{colorNames}" tabindex="1" class="form-control" placeholder="color" value="">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <label>Количество:</label>
+                                                <input type="text" name="" id="quantity-2" th:field="*{colorQuantities}" tabindex="1" class="form-control" placeholder="quantity" value="">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="form-group">
+                                                <label>Цвет :</label>
+                                                <input type="text" name="" id="color-3" th:field="*{colorNames}" tabindex="1" class="form-control" placeholder="color" value="">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <label>Количество:</label>
+                                                <input type="text" name="" id="quantity-3" th:field="*{colorQuantities}" tabindex="1" class="form-control" placeholder="quantity" value="">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="form-group">
+                                                <label>Цвет :</label>
+                                                <input type="text" name="" id="color-4" th:field="*{colorNames}" tabindex="1" class="form-control" placeholder="color" value="">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <label>Количество:</label>
+                                                <input type="text" name="" id="quantity-4" th:field="*{colorQuantities}" tabindex="1" class="form-control" placeholder="quantity" value="">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="form-group">
+                                                <label>Цвет :</label>
+                                                <input type="text" name="" id="color-5" th:field="*{colorNames}" tabindex="1" class="form-control" placeholder="color" value="">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <label>Количество:</label>
+                                                <input type="text" name="" id="quantity-5" th:field="*{colorQuantities}" tabindex="1" class="form-control" placeholder="quantity" value="">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <div class="form-group">
+                                    <label>Цена :</label>
+                                    <input type="text" name="" id="username-3" th:field="*{price}" tabindex="1" class="form-control" placeholder="price" value="">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Информация:</label>
+                                    <input type="text" name="" id="username-6" th:field="*{info}" tabindex="1" class="form-control" placeholder="info" value="">
+                                </div>
+
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <div class="form-group">
+                                                <label>параметр 1:</label>
+                                                <input type="text" name=""  th:field="*{parameterNames}" tabindex="1" class="form-control" placeholder="параметр" value="">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <label>Значение:</label>
+                                                <input type="text" name=""  th:field="*{parameterValues}" tabindex="1" class="form-control" placeholder="значение" value="">
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <div class="form-group">
+                                                <label>параметр 2:</label>
+                                                <input type="text" name=""  th:field="*{parameterNames}" tabindex="1" class="form-control" placeholder="параметр" value="">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <label>Значение:</label>
+                                                <input type="text" name=""  th:field="*{parameterValues}" tabindex="1" class="form-control" placeholder="значение" value="">
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <div class="form-group">
+                                                <label>параметр 3:</label>
+                                                <input type="text" name=""  th:field="*{parameterNames}" tabindex="1" class="form-control" placeholder="параметр" value="">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <label>Значение:</label>
+                                                <input type="text" name=""  th:field="*{parameterValues}" tabindex="1" class="form-control" placeholder="значение" value="">
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <div class="form-group">
+                                                <label>параметр 4:</label>
+                                                <input type="text" name=""  th:field="*{parameterNames}" tabindex="1" class="form-control" placeholder="параметр" value="">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <label>Значение:</label>
+                                                <input type="text" name=""  th:field="*{parameterValues}" tabindex="1" class="form-control" placeholder="значение" value="">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="form-group">
+                                                <label>параметр 5:</label>
+                                                <input type="text" name=""  th:field="*{parameterNames}" tabindex="1" class="form-control" placeholder="параметр" value="">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <label>Значение:</label>
+                                                <input type="text" name=""  th:field="*{parameterValues}" tabindex="1" class="form-control" placeholder="значение" value="">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="form-group">
+                                                <label>параметр 6:</label>
+                                                <input type="text" name=""  th:field="*{parameterNames}" tabindex="1" class="form-control" placeholder="параметр" value="">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <label>Значение:</label>
+                                                <input type="text" name=""  th:field="*{parameterValues}" tabindex="1" class="form-control" placeholder="значение" value="">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="form-group">
+                                                <label>параметр 7:</label>
+                                                <input type="text" name=""  th:field="*{parameterNames}" tabindex="1" class="form-control" placeholder="параметр" value="">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <label>Значение:</label>
+                                                <input type="text" name=""  th:field="*{parameterValues}" tabindex="1" class="form-control" placeholder="значение" value="">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="form-group">
+                                                <label>параметр 8:</label>
+                                                <input type="text" name=""  th:field="*{parameterNames}" tabindex="1" class="form-control" placeholder="параметр" value="">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <label>Значение:</label>
+                                                <input type="text" name=""  th:field="*{parameterValues}" tabindex="1" class="form-control" placeholder="значение" value="">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="form-group">
+                                                <label>параметр 9:</label>
+                                                <input type="text" name=""  th:field="*{parameterNames}" tabindex="1" class="form-control" placeholder="параметр" value="">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <label>Значение:</label>
+                                                <input type="text" name=""  th:field="*{parameterValues}" tabindex="1" class="form-control" placeholder="значение" value="">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="form-group">
+                                                <label>параметр 10:</label>
+                                                <input type="text" name=""  th:field="*{parameterNames}" tabindex="1" class="form-control" placeholder="параметр" value="">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <label>Значение:</label>
+                                                <input type="text" name=""  th:field="*{parameterValues}" tabindex="1" class="form-control" placeholder="значение" value="">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+
+                                <div class="form-group">
+                                    <label>фото 1: </label><input type="file" th:field="*{files}" name="file-1" id="file-1" tabindex="1" class="form-control" value="">
+                                </div>
+                                <div class="form-group">
+                                    <label>фото 2: </label><input type="file" th:field="*{files}" name="file-1" id="file-2" tabindex="1" class="form-control" value="">
+                                </div>
+                                <div class="form-group">
+                                    <label>фото 3: </label><input type="file" th:field="*{files}" name="file-1" id="file-3" tabindex="1" class="form-control" value="">
+                                </div>
+                                <div class="form-group">
+                                    <label>фото 4: </label><input type="file" th:field="*{files}" name="file-1" id="file-4" tabindex="1" class="form-control" value="">
+                                </div>
+                                <div class="form-group">
+                                    <label>фото 5: </label><input type="file" th:field="*{files}" name="file-1" id="file-5" tabindex="1" class="form-control" value="">
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-sm-6 col-sm-offset-3">
+                                            <input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Add Item">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+
+                            <form id="register-form" th:action="@{/admin/addCategory}" th:object="${category}" method="post" role="form" style="display: none;" enctype="multipart/form-data">
+                                <div class="form-group">
+                                    <input type="text" name="title" th:field="*{name}" id="title" tabindex="1" class="form-control" placeholder="Category title" value="">
+                                </div>
+                                <div class="form-group">
+                                    <label>image : </label><input type="file" th:field="*{file}" name="file" id="file" tabindex="1" class="form-control" value="">
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-sm-6 col-sm-offset-3">
+                                            <input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" value="Add Category">
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

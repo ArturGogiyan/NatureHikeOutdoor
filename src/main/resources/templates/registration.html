@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Logout</title>
+</head>
+
+<body>
+<form th:action="@{/register}" th:object="${user}" class="form-signin" method="POST"><h2 class="form-signin-heading">Register</h2>
+    <label for="inputUsername" class="sr-only">Username*</label>
+    <input type="text" th:field="*{username}" name="username" id="inputUsername" class="form-control" placeholder="Username" required="required" autofocus="autofocus" />
+    <label for="inputUsername" class="sr-only">Username*</label>
+    <input type="text" th:field="*{firstName}" name="firstName" id="inputFirstName" class="form-control" placeholder="FirstName" required="required" autofocus="autofocus" />
+    <label for="inputUsername" class="sr-only">Username*</label>
+    <input type="text" th:field="*{lastName}" name="lastName" id="inputLastName" class="form-control" placeholder="LastName" required="required" autofocus="autofocus" />
+    <label for="inputEmail" class="sr-only">Email Address*</label>
+    <input type="text" th:field="*{email}" name="email" id="inputEmail" class="form-control" placeholder="Email address" required="required" autofocus="autofocus" />
+    <label for="inputPassword" class="sr-only">Password</label>
+    <input type="password" th:field="*{password}" name="password" id="inputPassword" class="form-control" placeholder="Password" required="required" />
+    <label for="inputPassword" class="sr-only">Password</label>
+    <input type="password" th:field="*{matchingPassword}" name="confirm password" id="inputPassword2" class="form-control" placeholder="confirm Password" required="required" />
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+</form>
+</body>
+</html>
