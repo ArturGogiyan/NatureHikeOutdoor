@@ -265,7 +265,7 @@ div.asl_r .results {
             <a href="https://edvanchi.fwscart.com/cart/y5w4q5oquokuappzn1rucqvu">
                 <i class="material-icons shopping-cart">
                     shopping_cart
-                    <span class="cart__count" id="sp_basket_info_count">0</span>
+                    <span class="cart__count" id="sp_basket_info_count">1</span>
                 </i>
             </a>
         </li>
@@ -289,7 +289,21 @@ div.asl_r .results {
                                 <img width="555" height="555" th:src="${it.getURL()}" class="attachment-large size-large" alt="Coral Velvet Sleeping Bag" th:srcset="${it.getURL()}" sizes="(max-width: 555px) 100vw, 555px" title="" data-rl_title="" /></noscript></a></div></figure>
                     </div>
                     </div>
-                <a href="javascript:void(0);" onclick="javascript:AddToBasket();" class="btn is-fullwidth text-center btn--action is-large" style="width:25vw" th:utext="'Добавить в корзину - ' + ${item.getPrice()} + 'р.'"></a>
+
+                <table>
+                <tr>
+                    <td>
+                        <label id="colorSelecterLabel"></label>
+                            <select id = "colorSelecter">
+                            <option>выберите цвет</option>
+                            <option th:each="col : ${colors}" th:value="*{col.getId()}" th:utext="*{col.getName()}"></option>
+                        </select>
+                    </td>
+                    <td>
+                        <a href="" onclick="javascript:increment();" class="btn is-fullwidth text-center btn--action is-large" style="width:25vw" th:utext="'Добавить в корзину - ' + ${item.getPrice()} + 'р.'" data-toggle="modal" data-target="#exampleModal"></a>
+                    </td>
+                </tr>
+                </table>
             </div>
 
 
@@ -310,7 +324,33 @@ div.asl_r .results {
                 </div>
             </div>
         </div></div></article></div>
-</div></main>
+</div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Предмет добавлен в корзину</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!--comments here-->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Продолжить покупки</button>
+                    <button type="button" class="btn btn-primary">Перейти в корзину</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</main>
 
 
 <footer class="footer" id="footer"><div class="footer__top text-center">
@@ -339,11 +379,53 @@ div.asl_r .results {
         fwsa.src = '//stats.fw1.biz/rh?s=567833&m=&pid=0&cid=0&prodid=0&r=https%3a%2f%2fwebparse.ru%2fwebparse';
         var s = document.getElementsByTagName('script')[0];
         s.parentNode.insertBefore(fwsa, s);
-    })();</script></body></html>
+    })();
+</script>
 
-<div id="scroll-to-top" class="scroll-to-top"> <i class="icon fa fa-angle-up"></i></div> <script type='text/javascript' src='https://www.naturehike.com/wp-content/plugins/responsive-lightbox/assets/tosrus/js/jquery.tosrus.min.all.js'></script> <script type='text/javascript'>var rlArgs = {"script":"tosrus","selector":"lightbox","customEvents":"","activeGalleries":"1","effect":"slide","infinite":"1","keys":"1","autoplay":"0","pauseOnHover":"1","timeout":"4000","pagination":"1","paginationType":"bullets","closeOnClick":"0","woocommerce_gallery":"0","ajaxurl":"https:\/\/www.naturehike.com\/wp-admin\/admin-ajax.php","nonce":"cfc563d806"};</script> <script type='text/javascript' src='https://www.naturehike.com/wp-content/plugins/responsive-lightbox/js/front.js'></script> <script type='text/javascript' src='https://www.naturehike.com/wp-content/themes/edsbootstrap-child/js/mp.mansory.min.js'></script> <script type='text/javascript' src='https://www.naturehike.com/wp-content/themes/edsbootstrap-child/js/masonry.set.js'></script> <script type='text/javascript' src='https://www.naturehike.com/wp-content/themes/edsbootstrap-child/js/baidu.js'></script> <script type='text/javascript' src='//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js'></script>
-<script type='text/javascript' src='https://www.naturehike.com/wp-content/themes/edsbootstrap-child/js/slick.set.js'></script> <script type='text/javascript' src='https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js'></script> <script type='text/javascript' src='https://cdn.bootcss.com/owl-carousel/1.32/owl.carousel.min.js'></script> <script type='text/javascript' src='https://cdn.bootcss.com/stellar.js/0.6.2/jquery.stellar.min.js'></script> <script type='text/javascript' src='https://cdn.bootcss.com/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js'></script> <script type='text/javascript' src='https://cdn.bootcss.com/jquery-animateNumber/0.0.13/jquery.animateNumber.min.js'></script> <script type='text/javascript' src='https://www.naturehike.com/wp-content/themes/edsbootstrap/assets/js/general.js'></script> <script type='text/javascript'>var ajaxsearchlite = {"ajaxurl":"https:\/\/www.naturehike.com\/wp-admin\/admin-ajax.php","backend_ajaxurl":"https:\/\/www.naturehike.com\/wp-admin\/admin-ajax.php","js_scope":"jQuery"};
-var ASL = {"ajaxurl":"https:\/\/www.naturehike.com\/wp-admin\/admin-ajax.php","backend_ajaxurl":"https:\/\/www.naturehike.com\/wp-admin\/admin-ajax.php","js_scope":"jQuery","detect_ajax":"0","scrollbar":"1","js_retain_popstate":"0","version":"4725"};</script> <script type='text/javascript' src='//www.naturehike.com/wp-content/plugins/ajax-search-lite/js/min/jquery.ajaxsearchlite.min.js'></script> <script type='text/javascript'>var a3_lazyload_params = {"apply_images":"1","apply_videos":""};</script> <script type='text/javascript' src='//www.naturehike.com/wp-content/plugins/a3-lazy-load/assets/js/jquery.lazyloadxt.extra.min.js'></script> <script type='text/javascript' src='//www.naturehike.com/wp-content/plugins/a3-lazy-load/assets/js/jquery.lazyloadxt.srcset.min.js'></script> <script type='text/javascript'>var a3_lazyload_extend_params = {"edgeY":"0"};</script> <script type='text/javascript' src='//www.naturehike.com/wp-content/plugins/a3-lazy-load/assets/js/jquery.lazyloadxt.extend.js'></script> <script type='text/javascript' src='https://www.naturehike.com/wp-includes/js/wp-embed.min.js'></script>
+<script type="text/javascript">
+    function increment() {
+
+        x = document.getElementById("colorSelecter");
+        xVal = x.options[x.selectedIndex].value;
+        if(xVal===null) document.getElementById("colorSelecterLabel").innerHTML="Выберите цвет";
+        else {
+            $.ajax({
+                type: "GET",
+                url: '/addIntoCart',
+                data: "id="+xVal,
+                success: function (data) {
+                    if (data==="not_authorized") alert("необходимо авторизироваться для добавления товаров в корзину");
+                }
+            });
+        }
+    }
+</script>
+</body>
+</html>
+
+<div id="scroll-to-top" class="scroll-to-top"> <i class="icon fa fa-angle-up"></i></div> <script type='text/javascript' src='https://www.naturehike.com/wp-content/plugins/responsive-lightbox/assets/tosrus/js/jquery.tosrus.min.all.js'></script>
+<!--<script type='text/javascript'>var rlArgs = {"script":"tosrus","selector":"lightbox","customEvents":"","activeGalleries":"1","effect":"slide","infinite":"1","keys":"1","autoplay":"0","pauseOnHover":"1","timeout":"4000","pagination":"1","paginationType":"bullets","closeOnClick":"0","woocommerce_gallery":"0","ajaxurl":"https:\/\/www.naturehike.com\/wp-admin\/admin-ajax.php","nonce":"cfc563d806"};</script>-->
+<script type='text/javascript' src='https://www.naturehike.com/wp-content/plugins/responsive-lightbox/js/front.js'></script>
+<script type='text/javascript' src='https://www.naturehike.com/wp-content/themes/edsbootstrap-child/js/mp.mansory.min.js'></script>
+<script type='text/javascript' src='https://www.naturehike.com/wp-content/themes/edsbootstrap-child/js/masonry.set.js'></script>
+<script type='text/javascript' src='https://www.naturehike.com/wp-content/themes/edsbootstrap-child/js/baidu.js'></script>
+<script type='text/javascript' src='//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js'></script>
+<script type='text/javascript' src='https://www.naturehike.com/wp-content/themes/edsbootstrap-child/js/slick.set.js'></script>
+<script type='text/javascript' src='https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
+<script type='text/javascript' src='https://cdn.bootcss.com/owl-carousel/1.32/owl.carousel.min.js'></script>
+<script type='text/javascript' src='https://cdn.bootcss.com/stellar.js/0.6.2/jquery.stellar.min.js'></script>
+<script type='text/javascript' src='https://cdn.bootcss.com/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js'></script>
+<script type='text/javascript' src='https://cdn.bootcss.com/jquery-animateNumber/0.0.13/jquery.animateNumber.min.js'></script>
+<script type='text/javascript' src='https://www.naturehike.com/wp-content/themes/edsbootstrap/assets/js/general.js'></script>
+<!--<script type='text/javascript'>var ajaxsearchlite = {"ajaxurl":"https:\/\/www.naturehike.com\/wp-admin\/admin-ajax.php","backend_ajaxurl":"https:\/\/www.naturehike.com\/wp-admin\/admin-ajax.php","js_scope":"jQuery"};-->
+<!--var ASL = {"ajaxurl":"https:\/\/www.naturehike.com\/wp-admin\/admin-ajax.php","backend_ajaxurl":"https:\/\/www.naturehike.com\/wp-admin\/admin-ajax.php","js_scope":"jQuery","detect_ajax":"0","scrollbar":"1","js_retain_popstate":"0","version":"4725"};</script>-->
+<script type='text/javascript' src='//www.naturehike.com/wp-content/plugins/ajax-search-lite/js/min/jquery.ajaxsearchlite.min.js'></script>
+<!--<script type='text/javascript'>var a3_lazyload_params = {"apply_images":"1","apply_videos":""};</script>-->
+<script type='text/javascript' src='//www.naturehike.com/wp-content/plugins/a3-lazy-load/assets/js/jquery.lazylosp_basket_info_count-0"adxt.extra.min.js'></script>
+<script type='text/javascript' src='//www.naturehike.com/wp-content/plugins/a3-lazy-load/assets/js/jquery.lazyloadxt.srcset.min.js'></script>
+<!--<script type='text/javascript'>var a3_lazyload_extend_params = {"edgeY":"0"};</script>-->
+<script type='text/javascript' src='//www.naturehike.com/wp-content/plugins/a3-lazy-load/assets/js/jquery.lazyloadxt.extend.js'></script>
+<script type='text/javascript' src='https://www.naturehike.com/wp-includes/js/wp-embed.min.js'></script>
 
 
 </body>

@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import ru.demoshop.beta.dataBaseInterface.DAO.*;
 import ru.demoshop.beta.dataBaseInterface.entities.*;
 import ru.demoshop.beta.utils.WebUtils;
@@ -33,6 +34,8 @@ private ParametersDAO parametersDAO;
 @Autowired
 ColorsDAO colorsDAO;
 
+@Autowired
+UsersCartDAO usersCartDAO;
 
     @RequestMapping(value = {"/", "/welcome","/home"}, method = RequestMethod.GET)
     public String home(Model model, Principal principal) {
@@ -99,6 +102,15 @@ ColorsDAO colorsDAO;
     }
 
 
+
+    @RequestMapping(value = "/addIntoCart", method = RequestMethod.GET)
+    public @ResponseBody String addIntoCart(Model model, Principal principal, @RequestParam("id") long id) {
+        if(principal!=null) {
+            System.out.print(principal.getName() + " " + colorsDAO.findById(id).getName());
+            return "success";
+        } else return "not_authorized";
+
+    }
 
     @RequestMapping(value = "/c", method = RequestMethod.GET)
     public String c(Model model, Principal principal, @RequestParam("id") long id) {

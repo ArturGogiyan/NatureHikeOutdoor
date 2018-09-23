@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface ColorsDAO extends CrudRepository<Colors, Long> {
     List<Colors> findAllByItemId(long id);
+    Colors findById(long id);
 }
