@@ -158,32 +158,35 @@
 </div></header>
 
 <main>
-    <div class="hero">
+
+    <!--<div class="hero">-->
 
 
-    <link rel="stylesheet" href="//d11fdyfhxcs9cr.cloudfront.net/javascripts/flexslider/flexslider_v13.css" type="text/css" media="screen" />
-    <script src="//d11fdyfhxcs9cr.cloudfront.net/javascripts/flexslider/jquery.flexslider-min_v1.js" type="text/javascript"></script>
+    <!--<link rel="stylesheet" href="//d11fdyfhxcs9cr.cloudfront.net/javascripts/flexslider/flexslider_v13.css" type="text/css" media="screen" />-->
+    <!--<script src="//d11fdyfhxcs9cr.cloudfront.net/javascripts/flexslider/jquery.flexslider-min_v1.js" type="text/javascript"></script>-->
 
-    <div class="slider-wrapper theme-default">
-        <div id="slider" class="flexslider">
-            <ul class="slides">
-                <li><img src="//d13z1xw8270sfc.cloudfront.net/origin/490674/slide1.jpg" /></li>
-                <li><img src="//d13z1xw8270sfc.cloudfront.net/origin/490674/slide2.jpg" /></li>
-            </ul>
-        </div>
-        <script type="text/javascript">
-            $(document).ready(function () {
-                $('#slider').flexslider({useCSS:true, touch:true, animation: 'fade', animationSpeed: 300, slideshowSpeed: 5000, startAt: 0, directionNav: false, prevText: 'Prev', nextText: 'Next', controlNav: false, pauseOnHover: false,  randomize: false});
-            });
-        </script>
+    <!--<div class="slider-wrapper theme-default">-->
+        <!--<div id="slider" class="flexslider">-->
+            <!--<ul class="slides">-->
+                <!--<li><img src="//d13z1xw8270sfc.cloudfront.net/origin/490674/slide1.jpg" /></li>-->
+                <!--<li><img src="//d13z1xw8270sfc.cloudfront.net/origin/490674/slide2.jpg" /></li>-->
+            <!--</ul>-->
+        <!--</div>-->
+        <!--<script type="text/javascript">-->
+            <!--$(document).ready(function () {-->
+                <!--$('#slider').flexslider({useCSS:true, touch:true, animation: 'fade', animationSpeed: 300, slideshowSpeed: 5000, startAt: 0, directionNav: false, prevText: 'Prev', nextText: 'Next', controlNav: false, pauseOnHover: false,  randomize: false});-->
+            <!--});-->
+        <!--</script>-->
 
-    </div>
+    <!--</div>-->
 
 
-    <div class="hero__message">
+    <!--<div class="hero__message">-->
 
-    </div>
-</div><!-- Optional Header Template -->
+    <!--</div>-->
+<!--</div>-->
+
+    <!-- Optional Header Template -->
 
     <!--<table>-->
         <!--<tr>-->
@@ -196,7 +199,7 @@
         <div th:each="cat: ${categories}">
         <div class="grid__cell">
             <a th:href="'/category?id=' + ${cat.getId()}"  class="img-link">
-                <img class="featured__item featured__img" th:src="${cat.getPictireUrl()}" style="position: relative; width:48vw; height:auto;"/>
+                <img class="featured__item featured__img" th:src="${cat.getPictireUrl()}" style="position: relative; width:32vw; height:auto;"/>
                 <div class="featured__details">
                     <h3 class="featured__title" th:utext="${cat.getName()}"></h3>
                     <button th:onclick="'location.href=/category?id=' + ${cat.getId()}" type="button" class="btn btn--action btn--wide">Details</button>
